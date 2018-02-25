@@ -17,16 +17,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.redion.suitmedia_test.adapter.PeopleAdapter;
-import com.example.redion.suitmedia_test.api.client;
 import com.example.redion.suitmedia_test.model.people.DataPeople;
 import com.example.redion.suitmedia_test.model.people.ResponsePeople;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 /**
@@ -46,8 +41,8 @@ public class GuestFragment extends Fragment {
     ResponsePeople dataPeople;
     List<DataPeople> listPeople=new ArrayList<>();
 
-    //Declate Activity Context
-    Context mContext;
+    //Declare Activity Context
+    Context mContext = this.getActivity();
     
     public static GuestFragment newInstance() {
         return new GuestFragment();
@@ -67,32 +62,9 @@ public class GuestFragment extends Fragment {
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        setPeople();
-        mAdapter = new PeopleAdapter(listPeople);
+        mAdapter = new PeopleAdapter();
         mRecyclerView.setAdapter(mAdapter);
         return view;
-    }
-
-    public void setPeople(){
-        final Call<ResponsePeople> People= client.getApi().dataPeople();
-        People.enqueue(new Callback<ResponsePeople>() {
-            @Override
-            public void onResponse(Call<ResponsePeople> call, Response<ResponsePeople> response) {
-                if (response.isSuccessful()) {
-                    dataPeople=response.body();
-                    listPeople.clear();
-                    listPeople.addAll(dataPeople.getData());
-                    mAdapter.notifyDataSetChanged();
-                }else{
-                    Toast.makeText(mContext,"Error get data",Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponsePeople> call, Throwable t) {
-                Toast.makeText(mContext,t.getMessage(),Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
 

@@ -55,11 +55,16 @@ public class MainActivity extends AppCompatActivity {
     public void initEvent() {
         btnGuest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                GuestFragment fragment = GuestFragment.newInstance();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fLContent, fragment)
-                        .commit();
+                Intent intent = new Intent(mContext,GuestActivity.class);;
+                intent.putExtra("name",name);
+                mContext.startActivity(intent);
+            }
+        });
+        btnEvent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,EventActivity.class);;
+                intent.putExtra("name",name);
+                mContext.startActivity(intent);
             }
         });
     }

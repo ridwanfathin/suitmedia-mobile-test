@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.redion.suitmedia_test">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".EventActivity" />
+        <activity android:name=".GuestActivity"></activity>
     </application>
 
 </manifest>
