@@ -4,14 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.example.redion.suitmedia_test.R;
 import com.example.redion.suitmedia_test.adapter.GuestAdapter;
-import com.example.redion.suitmedia_test.adapter.PeopleAdapter;
 import com.example.redion.suitmedia_test.api.Request;
 import com.example.redion.suitmedia_test.model.GuestModel;
 import com.example.redion.suitmedia_test.model.Value;

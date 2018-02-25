@@ -36,6 +36,7 @@ public class EventActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+//        recyclerView.setOnClickListener();
 
         eventData();
     }
