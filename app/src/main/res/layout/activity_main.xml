@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+            <TextView
+                android:id="@+id/tVLabelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:hint="Nama: "
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/tVName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                tools:ignore="MissingConstraints"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pilih Event"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="231dp" />
+        <Button
+            android:id="@+id/btnGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pilih Guest"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="231dp" />
+    </LinearLayout>
+
+    <include layout="@layout/content_main" />
+</RelativeLayout>
