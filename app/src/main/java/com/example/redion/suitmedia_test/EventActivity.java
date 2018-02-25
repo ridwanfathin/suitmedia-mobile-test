@@ -1,5 +1,6 @@
 package com.example.redion.suitmedia_test;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.redion.suitmedia_test.adapter.EventAdapter;
 import com.example.redion.suitmedia_test.model.EventModel;
@@ -20,6 +22,7 @@ public class EventActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EventAdapter adapter;
     private List<EventModel> albumList;
+    int position= 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,6 @@ public class EventActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-//        recyclerView.setOnClickListener();
 
         eventData();
     }
@@ -99,6 +101,12 @@ public class EventActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void chooseEvent(){
+        Intent myIntent = new Intent(this, MainActivity.class);
+        myIntent.putExtra("event", albumList.get(position).toString());
+        startActivity(myIntent);
     }
 
     /**

@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView btnEvent;
     private TextView btnGuest;
     private String name;
+    private String eventName;
+    private String guestName;
 
     //declare context
     private Context mContext;
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = getIntent(); // gets the previously created intent
         name = (myIntent.getStringExtra("name")!=null) ? myIntent.getStringExtra("name") : "Nama";
         tVName.setText(name);
+        eventName = (myIntent.getStringExtra("event")!=null) ? myIntent.getStringExtra("event") : "Pilih Event";
+        tVName.setText(eventName);
+        guestName = (myIntent.getStringExtra("guest")!=null) ? myIntent.getStringExtra("guest") : "Pilih Guest";
+        tVName.setText(guestName);
     }
 
     public void startInit() {
