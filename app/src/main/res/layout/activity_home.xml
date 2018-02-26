@@ -1,34 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_validation"
+    android:padding="16dp"
+    tools:context="com.example.redion.suitmedia_test.HomeActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang"
+            android:textSize="18dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sertakan"
+            android:textSize="18dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorWhite"  />
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/add_foto"/>
+
         <EditText
             android:id="@+id/eTName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Masukkan nama.."
-            android:layout_gravity="center"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="149dp" />
+            android:hint="Masukan Nama"
+            android:textColorHighlight="@color/colorWhite"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/colorWhite" />
+
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Next"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="231dp" />
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_signup_normal"
+            android:text="Selesai"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
+
+
 
 </RelativeLayout>
