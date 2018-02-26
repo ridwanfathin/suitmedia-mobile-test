@@ -22,7 +22,6 @@ public class EventActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EventAdapter adapter;
     private List<EventModel> albumList;
-    int position= 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,12 +100,6 @@ public class EventActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-
-    public void chooseEvent(){
-        Intent myIntent = new Intent(this, MainActivity.class);
-        myIntent.putExtra("event", albumList.get(position).toString());
-        startActivity(myIntent);
     }
 
     /**
